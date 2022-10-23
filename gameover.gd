@@ -8,6 +8,8 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if Global.score > Global.high_score:
+		Global.high_score = Global.score
 	$Label.text = "GAME OVER\nYOUR SCORE WAS: " + str(Global.score)
 	pass # Replace with function body.
 

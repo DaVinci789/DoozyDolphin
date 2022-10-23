@@ -8,27 +8,24 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Global.zen = false
-	if Global.high_score > 0:
-		$Label2.text = "Game by DaVinci789\nYour High Score: " + str(Global.high_score)
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	if Input.is_action_pressed("ui_cancel"):
+		get_tree().paused = true
+		visible = true
+	pass
 
 
 func _on_Button_pressed():
-	get_tree().change_scene("res://world.tscn")
+	get_tree().paused = false
+	visible = false
 	pass # Replace with function body.
 
 
 func _on_Button2_pressed():
-	get_tree().change_scene("res://world.tscn")
-	Global.zen = true
-	pass # Replace with function body.
-
-
-func _on_Button3_pressed():
+	get_tree().paused = false
+	get_tree().change_scene("res://mainmenu.tscn")
 	pass # Replace with function body.

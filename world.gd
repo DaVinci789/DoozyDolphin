@@ -12,6 +12,10 @@ var arrows = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if Global.zen:
+		$hud/time.visible = false
+		$hud/score_label.visible = false
+		$timeleft.stop()
 	spawn_body()
 	spawn_body()
 	spawn_body()
