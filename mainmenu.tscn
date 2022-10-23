@@ -1,0 +1,86 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://FORTE.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://mainmenu.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 60
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 50
+font_data = ExtResource( 2 )
+
+[node name="mainmenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -165.5
+margin_top = -126.0
+margin_right = 165.5
+margin_bottom = 126.0
+custom_constants/separation = 18
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+margin_right = 331.0
+margin_bottom = 72.0
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 1 )
+text = "Timed Mode"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+margin_top = 90.0
+margin_right = 331.0
+margin_bottom = 162.0
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "Zen Mode"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+margin_top = 180.0
+margin_right = 331.0
+margin_bottom = 252.0
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 3 )
+text = "Tutorial"
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -321.0
+margin_right = 321.0
+margin_bottom = 110.0
+custom_fonts/font = ExtResource( 1 )
+text = "Doozy Dolphin"
+align = 1
+
+[node name="Label2" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -321.0
+margin_top = -110.0
+margin_right = 321.0
+custom_fonts/font = SubResource( 4 )
+text = "By DaVinci789"
+align = 1
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_Button3_pressed"]
