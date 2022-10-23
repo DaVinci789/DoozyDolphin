@@ -9,6 +9,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Global.zen = false
+	Global.tutorial = false
 	if Global.high_score > 0:
 		$Label2.text = "Game by DaVinci789\nYour High Score: " + str(Global.high_score)
 	pass # Replace with function body.
@@ -31,4 +32,7 @@ func _on_Button2_pressed():
 
 
 func _on_Button3_pressed():
+	get_tree().change_scene("res://world.tscn")
+	Global.zen = true
+	Global.tutorial = true
 	pass # Replace with function body.

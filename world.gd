@@ -16,6 +16,8 @@ func _ready():
 		$hud/time.visible = false
 		$hud/score_label.visible = false
 		$timeleft.stop()
+	if Global.tutorial:
+		$hud/textbox.visible = true
 	spawn_body()
 	spawn_body()
 	spawn_body()
